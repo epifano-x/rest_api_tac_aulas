@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.utfpr.turismoapi.models.Person;
-import br.edu.utfpr.turismoapi.respositories.PersonRepository;
+import br.edu.utfpr.turismoapi.models.Pessoa;
+import br.edu.utfpr.turismoapi.repositories.PessoaRepository;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("/pessoa")
-public class PersonController {
+public class PessoaController {
     @Autowired
-    PersonRepository personRepository;
+    PessoaRepository pessoaRepository;
 
     /**
      * obter todas as pessoas do seu banco
@@ -41,13 +41,13 @@ public class PersonController {
      * cria um usuario
      */
     @PostMapping(value = "")
-    public Person create() {
-        var pes = new Person();
+    public Pessoa create() {
+        var pes = new Pessoa();
         pes.setNome("juca da silva");
         pes.setEmail("juca@gmail.com");
         pes.setNascimento(LocalDateTime.now());
 
-        personRepository.save(pes);
+        pessoaRepository.save(pes);
 
         return pes;
     }
