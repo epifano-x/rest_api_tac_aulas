@@ -33,3 +33,13 @@ Content-Type: application/json
     "itinerario": "passeio pela cuia",
     "preco": 100.0
 }
+
+
+### post
+POST {{URL_BASE}}/auth
+Content-Type: application/json
+
+{
+    "username": "username",
+    "password": "1234"
+}
