@@ -5,5 +5,31 @@ GET {{URL_BASE}}/pessoa
 
 ### cadastra uma pessoa
 POST {{URL_BASE}}/pessoa
+Content-Type: application/json
 
+{
+    "nome": "medianeira",
+    "email": "bruno@bruno.com",
+    "nascimento": "2022-10-31T09:00:00Z",
+    "perfil": "CLIENTE"
+}
 ### 
+POST {{URL_BASE}}/pessoa
+
+### get
+
+GET {{URL_BASE}}/reservas
+
+### get
+
+GET {{URL_BASE}}/passeios
+
+### post
+POST {{URL_BASE}}/passeios
+Content-Type: application/json
+
+{
+    "destino": "medianeira",
+    "itinerario": "passeio pela cuia",
+    "preco": 100.0
+}

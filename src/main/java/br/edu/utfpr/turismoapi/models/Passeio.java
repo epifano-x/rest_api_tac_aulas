@@ -40,4 +40,5 @@ public class Passeio {
     @UpdateTimestamp
     @Column(name = "UpdatedAt")
     private LocalDateTime updatedAt;
+
 }

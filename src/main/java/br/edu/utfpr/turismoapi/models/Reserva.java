@@ -30,10 +30,6 @@ public class Reserva {
     @JoinColumn(name = "pessoa_id", nullable = false)
     private Pessoa pessoa;
 
-    @ManyToOne
-    @JoinColumn(name = "passeio_id", nullable = false)
-    private Passeio passeio;
-
     @CreationTimestamp
     @Column(name = "CreatedAt", updatable = false)
     private LocalDateTime createdAt;
