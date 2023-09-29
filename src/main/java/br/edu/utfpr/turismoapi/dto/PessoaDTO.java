@@ -28,6 +28,9 @@ public class PessoaDTO {
     @Email(message = "Formato de e-mail invalido")
     private String email;
 
+    @NotNull
+    private String password;
+
     @PastOrPresent
     private LocalDateTime nascimento;
 

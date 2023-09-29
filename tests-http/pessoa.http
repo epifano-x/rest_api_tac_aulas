@@ -1,31 +1,37 @@
-@URL_BASE=http://localhost:8080
+@URL=http://localhost:8080
+@token = Bearer eyJzdWIiOiJBUEkgYXV0aGVudGljYXRpb24iLCJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjk1NDAxOTEwLCJleHAiOjE2OTU0MDU1MTAsImlzcyI6IlVURlBSIn0
+
+### Obter todas pessoas
+GET {{URL}}
+Authorization: {{token}}
 
 ### obtem todas as pessoas
-GET {{URL_BASE}}/pessoa
+GET {{URL}}/pessoa
 
 ### cadastra uma pessoa
-POST {{URL_BASE}}/pessoa
+POST {{URL}}/pessoa
 Content-Type: application/json
 
 {
-    "nome": "medianeira",
-    "email": "bruno@bruno.com",
+    "nome": "medianeira1",
+    "email": "bruno1@bruno.com",
+    "password": "abc",
     "nascimento": "2022-10-31T09:00:00Z",
     "perfil": "CLIENTE"
 }
 ### 
-POST {{URL_BASE}}/pessoa
+POST {{URL}}/pessoa
 
 ### get
 
-GET {{URL_BASE}}/reservas
+GET {{URL}}/reservas
 
 ### get
 
-GET {{URL_BASE}}/passeios
+GET {{URL}}/passeios
 
 ### post
-POST {{URL_BASE}}/passeios
+POST {{URL}}/passeios
 Content-Type: application/json
 
 {
@@ -36,10 +42,55 @@ Content-Type: application/json
 
 
 ### post
-POST {{URL_BASE}}/auth
+POST {{URL}}/auth
 Content-Type: application/json
 
 {
     "username": "username",
     "password": "1234"
 }
+
+### post
+POST {{URL}}/auth
+Content-Type: application/json
+
+{
+    "username": "bruno@bruno.com",
+    "password": "abc"
+}
+
+
+
+
+### Obter uma pessoa pelo ID
+GET {{URL}}/70572e7b-0db0-4b20-8fd3-6c74ef4c1706
+Authorization: {{token}}
+
+### Criar uma pessoa
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "name": "Juca",
+    "email": "juca@gmail.com",
+    "password": "1234",
+    "birth": "2000-05-05"
+}
+
+### Atualizar uma pessoa
+PUT {{URL}}/1520a44d-363e-4e31-b08b-2090dd395d0b
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "name": "Marcelo",
+    "email": "mar@gmail.com",
+    "username": "mar",
+    "password": "1234",
+    "birth": "2000-05-06"
+}
+
+
+### Deletar uma pessoa
+DELETE {{URL}}/85bd872e-9017-4c5e-a218-446352253490
+Authorization: {{token}}

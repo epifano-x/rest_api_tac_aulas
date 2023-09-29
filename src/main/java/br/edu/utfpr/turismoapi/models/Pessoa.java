@@ -32,7 +32,7 @@ public class Pessoa {
     @Column(name = "Email", length = 150, nullable = false, unique = true)
     private String email;
 
-    @Column(name = "Password", length = 60, nullable = false) // Armazenar o hash da senha
+    @Column(name = "Password", length = 255, nullable = false) // Armazenar o hash da senha
     private String password;
 
     @Column(name = "Nascimento")
