@@ -31,6 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.utfpr.turismoapi.dto.PessoaDTO;
 import br.edu.utfpr.turismoapi.models.Pessoa;
 import br.edu.utfpr.turismoapi.repositories.PessoaRepository;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
 @RestController
@@ -58,6 +59,7 @@ public class PessoaController {
      * Obter 1 pessoa pelo ID
      */
     @GetMapping("/{id}")
+    @Operation(description = "abc")
     public ResponseEntity<Object> getById(@PathVariable String id) {
         Optional<Pessoa> PessoaOpt = PessoaRepository
                 .findById(UUID.fromString(id));
